@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import * as React from 'react';
-import { TodoItem } from './TodoItem';
+import { GetMyTodosQuery } from '../../generated/graphql';
 
 interface filterResults {
   (filter: string): void
 }
 
 interface TodoFiltersArgs {
-  todos: TodoItem[],
+  todos: GetMyTodosQuery["todos"],
   currentFilter: string,
   filterResultsFn: filterResults,
   clearCompletedFn: VoidFunction
